@@ -13,8 +13,14 @@ for line in file:
 
 sorting_rating_dict(ratings_dicts)
 
-user_restaurant = input("Enter restaurant name: ")
-user_rating = input("Enter restaurant score: ")
-ratings_dicts[user_restaurant] = user_rating
+user_restaurant = input("Enter restaurant name: ").title()
+
+while True:
+    
+    user_rating = int(input("Enter restaurant score: "))
+    if user_rating >= 1 and user_rating <= 5:
+        ratings_dicts[user_restaurant] = user_rating
+        break
+    print("Invalid score. Score should be between 1 and 5.")
 
 sorting_rating_dict(ratings_dicts)
